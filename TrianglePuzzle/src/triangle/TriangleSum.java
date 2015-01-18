@@ -30,7 +30,7 @@ public class TriangleSum {
 		
 		
 		br = new BufferedReader(new FileReader(file));
-		triangle = new int[rows][rows]; // Triangle is array representation of triangle
+		triangle = new int[rows][rows]; // 'triangle' is array representation of triangle
 		
 		try {
 			int r = 0;
@@ -45,12 +45,12 @@ public class TriangleSum {
 			br.close();
 			
 			/**
-			 * Using BFS from the bottom up works better than starting from the top.
+			 * Using breadth-first approach from the bottom up works better than starting from the top.
 			 * Instead of creating more possible paths working from the top, we eliminate them from 
 			 * the bottom up. Calculating total by replacing triangle[i][j] with its previous
 			 * value + maximum(nextRow same column, nextRow one column over).
-			 * This is essentially its adjacent values. We use the face that triangle[][]
-			 * is no longer needed. For further explanation, please email me:
+			 * This is essentially its adjacent values. We use the fact that triangle[][]
+			 * is no longer needed after we find its path. For further explanation, please email me:
 			 * rs1064@scarletmail.rutgers.edu 
 			 * 
 			 */
